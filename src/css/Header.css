@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+}
+
+.partner-button {
+    color: #000 !important;
+    border-color: #ccc !important;
+}
+
+.login-button {
+    background-color: #8a8a8a !important;
+    color: white !important;
+}

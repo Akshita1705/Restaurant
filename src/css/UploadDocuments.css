@@ -1,0 +1,52 @@
+
+
+.upload-caption {
+  color: orange;
+  font-size: 12px;
+}
+
+.upload-section {
+  margin-top: 40px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.upload-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  align-items: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.disabled-input {
+  width: 100px;
+}
+
+.verify-button {
+  background-color: #999;
+  color: #fff;
+  text-transform: capitalize;
+  width:100px;
+  height:55px;
+}
+.css-74d805-MuiButtonBase-root-MuiButton-root.account-button{
+    color: #fff;
+  text-transform: capitalize;
+  background-color: #999;
+    height:55px;
+}
+.expiry{
+    
+    display: flex;
+    gap:2px;
+}
+#expiry-date{
+    width:200px;
+}

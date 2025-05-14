@@ -1,0 +1,45 @@
+.onboarding-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+ 
+  min-height: 80vh;
+}
+
+.css-1gtchvp-MuiPaper-root.onboarding-card {
+  max-width: 600px;
+  width: 100%;
+  padding: 40px 30px;
+  text-align: center;
+  border-radius: 12px;
+  background-color: white;
+}
+
+.css-1umw9bq-MuiSvgIcon-root.check-icon {
+  font-size: 80px;
+  color: #00d563 !important;
+  margin-bottom: 20px;
+}
+
+.css-1miy0lu-MuiTypography-root.onboarding-title,
+.css-1miy0lu-MuiTypography-root.onboarding-subtitle {
+  font-weight: 600;
+}
+
+.css-1miy0lu-MuiTypography-root .onboarding-subtitle {
+  margin-bottom: 16px;
+}
+
+.css-7ctihp-MuiTypography-root.onboarding-text {
+  color: #555;
+  margin-bottom: 20px;
+  margin-top:20px;
+}
+
+.css-1jpc804-MuiDivider-root.divider {
+  margin-top: 10px;
+}
+
+
+
