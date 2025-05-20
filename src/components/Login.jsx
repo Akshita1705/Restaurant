@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import {
     Typography,
@@ -16,6 +17,8 @@ import '../css/Login.css';
 
 
 const Login = ({ switchToSignup, switchToEmail }) => {
+    const navigate = useNavigate();
+
     const [phoneNumber, setPhoneNumber] = useState('');
   
     return (
@@ -25,17 +28,23 @@ const Login = ({ switchToSignup, switchToEmail }) => {
                     <Typography variant="h5" component="h1" className="login-title">
                         Login
                     </Typography>
-                    <IconButton aria-label="close">
-                        <CloseIcon />
-                    </IconButton>
+                    <IconButton aria-label="close" onClick={() => navigate(-1)}>
+    <CloseIcon />
+</IconButton>
+
                 </Box>
 
                 <Box component="form" >
     <Box className="phone-number" >
-        <Box className="flag">
-        
-            <span role="img" aria-label="India">IN</span>
-        </Box>
+       <Box className="flag">
+  <img
+    src="https://flagcdn.com/w40/in.png"
+    alt="India Flag"
+   
+  />
+</Box>
+
+
 
         <TextField
             value="+91"

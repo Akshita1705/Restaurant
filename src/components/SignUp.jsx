@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import {
     Typography,
@@ -16,6 +17,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 import '../css/SignUp.css'; 
 
 const Signup = ({switchToLogin}) => {
+    const navigate = useNavigate();
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [agree, setAgree] = useState(false);
@@ -27,9 +29,9 @@ const Signup = ({switchToLogin}) => {
                     <Typography variant="h5" component="h1" className="signup-title">
                         Signup
                     </Typography>
-                    <IconButton aria-label="close">
-                        <CloseIcon />
-                    </IconButton>
+                   <IconButton aria-label="close" onClick={() => navigate(-1)}>
+    <CloseIcon />
+    </IconButton>
                 </Box>
 
                 <Box component="form">
