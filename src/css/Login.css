@@ -4,14 +4,14 @@
     align-items: center;
     min-height: 80vh;
     padding: 20px;
-   
 }
 
-.login-paper {
+.css-1gtchvp-MuiPaper-root.login-paper {
     padding: 24px;
     width: 100%;
     border-radius: 8px;
     max-width: 500px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .login-header {
@@ -19,45 +19,58 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
-   
-    
 }
 
-.css-16xl4zq-MuiTypography-root.login-title {
-    font-weight: bold;
-    font-size: 37px;
+
+
+.phone-form {
+    display: flex;
+    flex-direction: column;
 }
 
-.phone-number{
-    display:flex;
-    gap:1px;
-    margin-bottom:2px;
- 
-}
-.flag{
-    border:1px solid #ccc;
-    padding:8px 12px;
-    display:flex;
+.phone-input-wrapper {
+    display: flex;
     align-items: center;
-    justify-content: center;
-    min-width:48px ;
-    background-color:#fff ;
-  
-  
-}
-.prefix{
-    max-width:80px ;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 4px;
     background-color: #fff;
-    
 }
-.css-1k9hkw1-MuiButtonBase-root-MuiButton-root.submit-button {
-    background-color: #e05258 !important;
+.phone-input-wrapper:focus-within {
+    border-color: #1976d2; /* MUI primary blue */
+    box-shadow: 0 0 0 1px #1976d2;
+}
+
+.country-selector {
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    border-right: 1px solid #ccc;
+}
+
+.flag-img {
+    width: 24px;
+    margin-right: 4px;
+}
+
+.country-code {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.phone-input .MuiOutlinedInput-notchedOutline {
+    border: none;
+}
+
+.submit-button {
+    background-color: #e23744 !important;
     color: white !important;
     font-weight: bold !important;
     text-transform: none !important;
     padding: 12px 0 !important;
     border-radius: 6px !important;
-    margin: 16px 0px;
+    margin: 16px 0;
     font-size: 0.95rem;
 }
 
@@ -77,23 +90,30 @@
     font-size: 14px;
 }
 
+.email-button {
+    text-transform: none !important;
+    font-weight: bold !important;
+    border-radius: 6px !important;
+    color: #333 !important;
+    border-color: #ccc !important;
+    margin-bottom: 12px !important;
+}
+
 .form-footer {
     display: flex;
     justify-content: center;
     margin-top: 24px;
 }
 
-.footer-text {
+.css-7ctihp-MuiTypography-root .footer-text {
     color: #666;
-    margin-right: 6px;
     font-size: 14px;
+    margin-right: 4px;
 }
 
 .css-7ctihp-MuiTypography-root.footer-link {
-    color: #001f4d;
+    color: #e23744 !important;
     font-weight: bold;
-    cursor: pointer;
     font-size: 14px;
-    padding-left: 3px;
-   
+    cursor: pointer;
 }
