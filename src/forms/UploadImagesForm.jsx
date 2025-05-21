@@ -1,13 +1,16 @@
 import { Box, Typography, Button, Divider } from '@mui/material';
 import ImageUploadSection from '../sections/ImageUploadSection';
-import {useState} from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../css/Forms.css';
+
 const UploadImagesForm = ({ onNext }) => {
     const [restaurantImages, setRestaurantImages] = useState([]);
     const [foodImages, setFoodImages] = useState([]);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const navigate = useNavigate();
-    const handleClick=()=>{
+
+    const handleClick = () => {
         navigate('/online');
     }
 
@@ -58,28 +61,9 @@ const UploadImagesForm = ({ onNext }) => {
 
     if (isSubmitted) {
         return (
-            <Box sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                textAlign: 'center',
-                p: 4,
-                maxWidth: '800px',
-                mx: 'auto'
-            }}>
-                <Box
-                    sx={{
-                        width: 120,
-                        height: 120,
-                        bgcolor: '#22c55e',
-                        borderRadius: '50%',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        mb: 3
-                    }}
-                >
-                    <Typography component="span" sx={{ color: 'white', fontSize: '60px' }}>✓</Typography>
+            <Box className="success-container">
+                <Box className="success-icon">
+                    <Typography component="span" className="success-icon-text">✓</Typography>
                 </Box>
 
                 <Typography variant="h6" sx={{ mb: 2 }}>STEP -1 Completed</Typography>
@@ -96,28 +80,15 @@ const UploadImagesForm = ({ onNext }) => {
 
                 <Button
                     variant="contained"
-                     onClick={handleClick}
-                    sx={{
-                        py: 2,
-                        px: 4,
-                        mb: 3,
-                        backgroundColor: '#22c55e',
-                        '&:hover': { backgroundColor: '#16a34a' },
-                        borderRadius: '4px',
-                    }}
+                    onClick={handleClick}
+                    className="success-button-primary"
                 >
                     STEP -2 Register for online ordering
                 </Button>
 
                 <Button
                     variant="contained"
-                    sx={{
-                        py: 1.5,
-                        px: 4,
-                        backgroundColor: '#9e9e9e',
-                        '&:hover': { backgroundColor: '#757575' },
-                        borderRadius: '4px',
-                    }}
+                    className="success-button-secondary"
                 >
                     Done For now
                 </Button>
@@ -136,7 +107,7 @@ const UploadImagesForm = ({ onNext }) => {
                     Restaurant Images
                 </Typography>
                 <Typography variant="body2" sx={{ mb: 2 }}>
-                    Please upload atleast one facade shot
+                    Please upload at least one facade shot
                 </Typography>
                 <ImageUploadSection
                     type="restaurant"
@@ -163,20 +134,12 @@ const UploadImagesForm = ({ onNext }) => {
                 />
             </Box>
 
-            <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4, mb: 2 }}>
+            <Box className="submit-button-container">
                 <Button
                     variant="contained"
                     size="large"
                     onClick={handleSubmit}
-                    sx={{
-                        py: 1.5,
-                        px: 6,
-                        fontSize: '1.1rem',
-                        backgroundColor: '#8a8a8a',
-                        '&:hover': { backgroundColor: '#6b6b6b' },
-                        borderRadius: '4px',
-                        minWidth: '250px'
-                    }}
+                    className="form-button"
                 >
                     Submit Restaurant Details
                 </Button>

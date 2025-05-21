@@ -1,69 +1,34 @@
-
 import { Box, Typography } from '@mui/material';
+import '../css/Forms.css';
 
 const ImageUploadSection = ({ type, images, onDrop, onDragOver, onImageUpload }) => {
     const inputId = `file-upload-${type}`;
 
     return (
         <Box
-            sx={{
-                backgroundColor: '#e8e8e8',
-                borderRadius: 1,
-                p: 3,
-                minHeight: 250,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                mb: 3,
-                position: 'relative',
-                cursor: 'pointer'
-            }}
+            className="image-upload-section"
             onDrop={(e) => onDrop(e, type)}
             onDragOver={onDragOver}
             component="label"
             htmlFor={inputId}
         >
             {images.length > 0 ? (
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', width: '100%', justifyContent: 'flex-start' }}>
+                <Box className="image-preview-container">
                     {images.map((image, index) => (
                         <Box
                             key={index}
-                            sx={{
-                                width: 120,
-                                height: 120,
-                                m: 1,
-                                borderRadius: 1,
-                                overflow: 'hidden',
-                                backgroundColor: '#f5f5f5',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                boxShadow: '0px 1px 3px rgba(0,0,0,0.1)'
-                            }}
+                            className="image-preview-box"
                         >
                             <img
                                 src={image.preview}
                                 alt={`Preview ${index}`}
-                                style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'cover' }}
+                                className="image-preview"
                             />
                         </Box>
                     ))}
 
                     <Box
-                        sx={{
-                            width: 120,
-                            height: 120,
-                            m: 1,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            backgroundColor: '#ffffff',
-                            borderRadius: 1,
-                            border: '1px solid #ddd',
-                            flexDirection: 'column',
-                            cursor: 'pointer'
-                        }}
+                        className="add-image-box"
                         component="label"
                         htmlFor={inputId}
                     >
@@ -72,22 +37,9 @@ const ImageUploadSection = ({ type, images, onDrop, onDragOver, onImageUpload })
                     </Box>
                 </Box>
             ) : (
-                <Box sx={{ textAlign: 'center', py: 4 }}>
+                <Box className="empty-upload-container">
                     <Box
-                        sx={{
-                            width: 120,
-                            height: 120,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            backgroundColor: '#ffffff',
-                            borderRadius: 1,
-                            border: '1px solid #ddd',
-                            flexDirection: 'column',
-                            mx: 'auto',
-                            mb: 3,
-                            cursor: 'pointer'
-                        }}
+                        className="empty-upload-box"
                         component="label"
                         htmlFor={inputId}
                     >
