@@ -47,7 +47,7 @@ const Login = ({ switchToSignup, switchToEmail }) => {
 
 
         <TextField
-            value="+91"
+            label="+91"
             size="small"
             variant="outlined"
             disabled
@@ -56,7 +56,7 @@ const Login = ({ switchToSignup, switchToEmail }) => {
         />
 
         <TextField
-            placeholder="Enter your phone number"
+            label="Enter your phone number"
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
             size="small"

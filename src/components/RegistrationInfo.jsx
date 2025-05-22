@@ -38,9 +38,19 @@ function RegistrationInformation() {
             <FormControlLabel value="same" control={<Radio />} label="Same as Restaurant Number" />
           </RadioGroup>
           <Box className="phone-inputs">
-            <TextField value="+91" disabled className="country-code" />
-            <TextField label="STD Code" />
-            <TextField label="Number" />
+            <TextField
+              value="+91"
+              disabled
+              variant="outlined"
+              size="small"
+              className="country-code"
+            />
+            <TextField
+              label="Number"
+              variant="outlined"
+              fullWidth
+              size="small"
+            />
           </Box>
 
           {/* Contact 2 */}
@@ -50,8 +60,19 @@ function RegistrationInformation() {
             <FormControlLabel value="same" control={<Radio />} label="Same as Restaurant Number" />
           </RadioGroup>
           <Box className="phone-inputs">
-            <TextField value="+91" disabled className="country-code" />
-            <TextField label="Number" />
+            <TextField
+              value="+91"
+              disabled
+              variant="outlined"
+              size="small"
+              className="country-code"
+            />
+            <TextField
+              label="Number"
+              variant="outlined"
+              fullWidth
+              size="small"
+            />
           </Box>
         </Collapse>
       </Box>
@@ -70,12 +91,33 @@ function RegistrationInformation() {
         </RadioGroup>
 
         <Box className="account-inputs">
-          <TextField label="Full Name" />
-          <TextField label="Email ID" />
+          <TextField
+            label="Full Name"
+            variant="outlined"
+            fullWidth
+            size="small"
+          />
+          <TextField
+            label="Email ID"
+            variant="outlined"
+            fullWidth
+            size="small"
+          />
         </Box>
         <Box className="account-inputs">
-          <TextField value="+91" disabled className="country-code" />
-          <TextField label="Accounting Notifications number" />
+          <TextField
+            value="+91"
+            disabled
+            variant="outlined"
+            size="small"
+            className="country-code"
+          />
+          <TextField
+            label="Accounting Notifications number"
+            variant="outlined"
+            fullWidth
+            size="small"
+          />
           <Button variant="contained" className="verify-button">verify</Button>
         </Box>
       </Box>

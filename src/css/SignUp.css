@@ -97,3 +97,19 @@
     padding-left: 3px;
    
 }
+
+.MuiTextField-root .MuiInputLabel-outlined {
+    transform: translate(14px, 12px) scale(1);
+}
+
+.MuiTextField-root .MuiInputLabel-outlined.MuiInputLabel-shrink {
+    transform: translate(14px, -6px) scale(0.75);
+}
+
+.MuiTextField-root .MuiOutlinedInput-root {
+    border-radius: 4px;
+}
+
+.MuiTextField-root .MuiOutlinedInput-input {
+    padding: 12px 14px;
+}

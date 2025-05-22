@@ -88,13 +88,14 @@
 .form-button {
     padding: 12px 48px;
     font-size: 1.1rem;
-    background-color: #8a8a8a;
-    color: white;
+    background-color: #ef4f5f !important;
+    color: white !important;
+    text-transform: none !important;
     border-radius: 4px;
 }
 
 .form-button:hover {
-    background-color: #6b6b6b;
+    background-color: #d8454f !important;
 }
 
 .form-button-container {
@@ -365,6 +366,23 @@
     padding: 24px 20px;
     margin-bottom: 28px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+/* These styles control the TextField label animations */
+.MuiTextField-root .MuiInputLabel-outlined {
+    transform: translate(14px, 12px) scale(1);
+}
+
+.MuiTextField-root .MuiInputLabel-outlined.MuiInputLabel-shrink {
+    transform: translate(14px, -6px) scale(0.75);
+}
+
+.MuiTextField-root .MuiOutlinedInput-root {
+    border-radius: 4px;
+}
+
+.MuiTextField-root .MuiOutlinedInput-input {
+    padding: 12px 14px;
 }
 
 @media (max-width: 900px) {

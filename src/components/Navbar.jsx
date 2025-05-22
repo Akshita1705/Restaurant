@@ -26,7 +26,7 @@ const Navbar = () => {
         <Toolbar className="navbar-toolbar">
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, cursor: 'pointer' }} onClick={handleLogoClick}>
             <Box component="div" className="logo-container">
-              <Box component="img" src="https://b.zmtcdn.com/images/zomato_business_logo.svg" alt="Logo" sx={{ height: 40 }} />
+              <Box component="img" src="" alt="Logo" sx={{ height: 40 }} />
             </Box>
           </Typography>
           <Button variant="contained" className="login-button" onClick={handleLoginClick}>Login</Button>

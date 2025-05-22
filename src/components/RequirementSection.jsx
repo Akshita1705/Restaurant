@@ -1,6 +1,7 @@
 import { Typography, Box, Button, Container, Grid } from '@mui/material';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import '../css/RequirementsSection.css';
+import helpImage from '../assets/img/help.png';
 
 const RequirementsSection = () => {
     const requirements = [
@@ -33,7 +34,7 @@ const RequirementsSection = () => {
                             <Box className="requirements-list">
                                 {requirements.map((req, index) => (
                                     <Box key={index} className="requirement-item">
-                                        <CheckCircleOutlineIcon className="check-icon" />
+                                        <CheckCircleIcon className="check-icon" />
                                         <Typography variant="body1">{req}</Typography>
 
                                         {index === 1 && (
@@ -54,6 +55,11 @@ const RequirementsSection = () => {
 
                         <Grid item xs={12} md={5}>
                             <Box className="video-container">
+                                <img
+                                    src={helpImage}
+                                    alt="Onboarding video thumbnail"
+                                    className="video-thumbnail"
+                                />
                                 <Button variant="outlined" className="video-button">
                                     Onboarding Guide - Video
                                 </Button>

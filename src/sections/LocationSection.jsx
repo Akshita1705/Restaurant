@@ -63,7 +63,7 @@ const LocationSection = () => {
 
         try {
             // Limit search to India by adding country code
-            const endpoint =' https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(searchValue)}.json?country=in&access_token=${MAPBOX_TOKEN}&limit=1';
+            const endpoint = ' https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(searchValue)}.json?country=in&access_token=${MAPBOX_TOKEN}&limit=1';
 
             const response = await fetch(endpoint);
             const data = await response.json();
@@ -105,17 +105,17 @@ const LocationSection = () => {
 
             <TextField
                 fullWidth
-                placeholder="Restaurant Name"
-                margin="normal"
+                label="Restaurant Name"
                 variant="outlined"
-                sx={{ mb: 2 }}
+                size="small"
             />
 
             <TextField
                 fullWidth
-                placeholder="Restaurant complete Address"
+                label="Restaurant complete Address"
                 margin="normal"
                 variant="outlined"
+                size="small"
                 sx={{ mb: 1 }}
             />
 
@@ -133,7 +133,7 @@ const LocationSection = () => {
 
             <Box sx={{ display: 'flex', mb: 2 }}>
                 <TextField
-                    placeholder="Enter your restaurant Location"
+                    label="Enter your restaurant Location"
                     value={searchValue}
                     onChange={(e) => setSearchValue(e.target.value)}
                     onKeyPress={handleSearchKeyPress}
@@ -145,13 +145,15 @@ const LocationSection = () => {
                         ),
                     }}
                     variant="outlined"
+                    size="small"
                     sx={{ flex: 1 }}
+                    fullWidth
                 />
                 <Button
                     variant="contained"
                     onClick={handleSearch}
                     sx={{
-                        height: '56px',
+                        height: '40px',
                         borderRadius: '0',
                         bgcolor: '#8a8a8a',
                         '&:hover': { bgcolor: '#6b6b6b' }
@@ -163,7 +165,7 @@ const LocationSection = () => {
                     variant="outlined"
                     onClick={handleDetectLocation}
                     sx={{
-                        height: '56px',
+                        height: '40px',
                         borderTopLeftRadius: 0,
                         borderBottomLeftRadius: 0,
                         width: '110px'

@@ -15,7 +15,7 @@ const OnboardingComplete = () => {
           Restaurant&nbsp;&nbsp;details Submitted
         </Typography>
         <Typography variant="body2" className="onboarding-text">
-          Our team will verify the details and update once your page is live on Zomato
+          Our team will verify the details and update once your page is live
         </Typography>
         <Divider className="divider" />
       </Paper>

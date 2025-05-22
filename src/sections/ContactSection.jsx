@@ -1,4 +1,3 @@
-
 import {
     Box,
     Typography,
@@ -25,16 +24,23 @@ const ContactSection = () => {
                     placeholder="91"
                     defaultValue="91"
                     variant="outlined"
+                    size="small"
                     sx={{ width: '100px', flexShrink: 0 }}
                 />
                 <TextField
-                    placeholder="Mobile Number at the restaurant"
+                    label="Mobile Number at the restaurant"
                     variant="outlined"
-                    sx={{ flex: 1 }}
+                    size="small"
+                    fullWidth
                 />
                 <Button
                     variant="contained"
-                    sx={{ width: '120px', flexShrink: 0, bgcolor: '#9e9e9e', '&:hover': { bgcolor: '#757575' } }}
+                    sx={{
+                        height: '40px',
+                        flexShrink: 0,
+                        bgcolor: '#ef4f5f',
+                        '&:hover': { bgcolor: '#d8454f' }
+                    }}
                 >
                     verify
                 </Button>
@@ -51,21 +57,29 @@ const ContactSection = () => {
                     placeholder="91"
                     defaultValue="91"
                     variant="outlined"
+                    size="small"
                     sx={{ width: '100px', flexShrink: 0 }}
                 />
                 <TextField
-                    placeholder="STD Code"
+                    label="STD Code"
                     variant="outlined"
+                    size="small"
                     sx={{ width: '150px', flexShrink: 0 }}
                 />
                 <TextField
-                    placeholder="Landline Number"
+                    label="Landline Number"
                     variant="outlined"
-                    sx={{ flex: 1 }}
+                    size="small"
+                    fullWidth
                 />
                 <Button
                     variant="contained"
-                    sx={{ width: '120px', flexShrink: 0, bgcolor: '#9e9e9e', '&:hover': { bgcolor: '#757575' } }}
+                    sx={{
+                        height: '40px',
+                        flexShrink: 0,
+                        bgcolor: '#ef4f5f',
+                        '&:hover': { bgcolor: '#d8454f' }
+                    }}
                 >
                     verify
                 </Button>

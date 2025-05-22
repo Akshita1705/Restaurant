@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import {
     Box,
     Typography,
@@ -53,16 +53,23 @@ const OwnerDetailsSection = () => {
                             placeholder="91"
                             defaultValue="91"
                             variant="outlined"
+                            size="small"
                             sx={{ width: '100px', flexShrink: 0 }}
                         />
                         <TextField
                             placeholder="Mobile Number at the restaurant"
                             variant="outlined"
-                            sx={{ flex: 1 }}
+                            size="small"
+                            fullWidth
                         />
                         <Button
                             variant="contained"
-                            sx={{ width: '120px', flexShrink: 0, bgcolor: '#9e9e9e', '&:hover': { bgcolor: '#757575' } }}
+                            sx={{
+                                height: '40px',
+                                flexShrink: 0,
+                                bgcolor: '#ef4f5f',
+                                '&:hover': { bgcolor: '#d8454f' }
+                            }}
                         >
                             verify
                         </Button>
@@ -79,11 +86,13 @@ const OwnerDetailsSection = () => {
                             fullWidth
                             placeholder="Owner Name"
                             variant="outlined"
+                            size="small"
                         />
                         <TextField
                             fullWidth
                             placeholder="Owner Email address"
                             variant="outlined"
+                            size="small"
                         />
                     </Box>
                 </>
