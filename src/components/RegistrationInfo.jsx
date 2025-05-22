@@ -15,7 +15,7 @@ function RegistrationInformation() {
   const [expanded, setExpanded] = React.useState(true);
 
   return (
-    <Box className="restaurant-info-container">
+    <Box className="registration-info-card">
       <Typography variant="h5" className="section-title">
         Restaurant Information
       </Typography>

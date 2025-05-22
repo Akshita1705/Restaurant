@@ -1,64 +1,64 @@
 .getstarted-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   /* min-height: 100vh;*/
-   
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 40px 20px;
- 
   min-height: 80vh;
-   
-  }
-  
-  .getstarted-card {
-    width: 500px;
-    border-radius: 12px;
-    padding: 16px;
-    margin:10px;
-  }
-  
-  .css-1miy0lu-MuiTypography-root.getstarted-title {
-    font-weight: bold;
-    margin-bottom: 8px;
-   
-  }
-  
-  .getstarted-subtitle {
-    color: #999;
-    margin-bottom: 16px;
-    padding-bottom:16px;
-  }
-  
-  .getstarted-checkitem {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding:15px;
-  }
-  
-  .getstarted-icon {
-    color: #000;
-    font-size: 20px;
-  }
-  
-  .getstarted-divider {
-    padding:15px;
-  }
-  
-  .getstarted-button-box {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .MuiButton-root.getstarted-button {
-    background-color: #24d14c;
-    color: #fff;
-    font-weight: bold;
-    text-transform: none;
-    padding: 6px 40px;
-    margin:10px;
-    border-radius: 4px;
-  }
-  
-  
-  
+}
+
+.getstarted-card {
+  width: 500px;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.getstarted-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 22px !important;
+}
+
+.getstarted-subtitle {
+  color: #666;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+}
+
+.getstarted-checkitem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 5px;
+}
+
+.getstarted-icon {
+  color: #ef4f5f;
+  font-size: 20px;
+}
+
+.getstarted-divider {
+  margin: 15px 0 !important;
+}
+
+.getstarted-button-box {
+  display: flex;
+  justify-content: center;
+}
+
+.getstarted-button {
+  background-color: #ef4f5f !important;
+  color: #fff !important;
+  font-weight: bold !important;
+  text-transform: none !important;
+  padding: 8px 40px !important;
+  margin: 10px;
+  border-radius: 8px !important;
+}
+
+.getstarted-button:hover {
+  background-color: #d8454f !important;
+}
+
+

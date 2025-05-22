@@ -4,30 +4,35 @@ import {
   Button,
   Typography,
   Box,
-  Paper
+  Container
 } from '@mui/material';
-import { AccountCircle, ExpandMore } from '@mui/icons-material';
-import '../css/Navbar.css'; 
+import '../css/Navbar.css';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-  return (
-    <>
-      <AppBar className="navbar-appbar" color="default">
-        <Toolbar className="navbar-toolbar">
-          <Button variant="outlined" >Restaurant Partner</Button>
+  const navigate = useNavigate();
 
-          <Box className="user-box">
-            <AccountCircle className="icon" />
-            <Paper className="user-paper">
-              <Typography variant="body2" className="name">
-                First Name
-              </Typography>
-            </Paper>
-            <ExpandMore />
-          </Box>
+  const handleLoginClick = () => {
+    navigate('/login');
+  };
+
+  const handleLogoClick = () => {
+    navigate('/');
+  };
+
+  return (
+    <AppBar position="static" color="transparent" elevation={0} className="navbar-appbar">
+      <Container maxWidth="lg">
+        <Toolbar className="navbar-toolbar">
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, cursor: 'pointer' }} onClick={handleLogoClick}>
+            <Box component="div" className="logo-container">
+              <Box component="img" src="https://b.zmtcdn.com/images/zomato_business_logo.svg" alt="Logo" sx={{ height: 40 }} />
+            </Box>
+          </Typography>
+          <Button variant="contained" className="login-button" onClick={handleLoginClick}>Login</Button>
         </Toolbar>
-      </AppBar>
-    </>
+      </Container>
+    </AppBar>
   );
 };
 

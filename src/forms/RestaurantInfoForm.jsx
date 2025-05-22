@@ -6,17 +6,15 @@ import '../css/Forms.css';
 
 const RestaurantInfoForm = ({ onNext }) => {
     return (
-        <Box className="form-content">
+        <Box className="registration-card">
             <LocationSection />
             <ContactSection />
             <OwnerDetailsSection />
-
-            <Box className="form-button-container">
+            <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 4 }}>
                 <Button
                     variant="contained"
                     size="large"
                     onClick={onNext}
-                    className="form-button"
                 >
                     Next
                 </Button>

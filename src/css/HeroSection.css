@@ -1,20 +1,52 @@
 .hero-section {
     text-align: center;
-    padding: 40px 0;
+    padding: 80px 0;
+    background-color: #ffffff;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../assets/img/food.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
 .hero-title {
-    font-weight: bold !important;
+    font-weight: 700 !important;
+    font-size: 3.5rem !important;
     margin-bottom: 10px !important;
+    color: #333;
 }
 
 .hero-subtitle {
+    font-weight: 600 !important;
+    font-size: 2.5rem !important;
     margin-bottom: 20px !important;
+    color: #333;
+}
+
+.hero-promotion {
+    font-weight: 500 !important;
+    color: #333;
+    margin-bottom: 30px !important;
+}
+
+.promotion-detail {
+    font-weight: 400;
+    color: #666;
 }
 
 .register-button {
-    background-color: #8a8a8a !important;
+    background-color: #ef4f5f !important;
     color: white !important;
-    padding: 10px 30px !important;
+    padding: 12px 40px !important;
     font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    text-transform: none !important;
+}
+
+.register-button:hover {
+    background-color: #d8454f !important;
 }

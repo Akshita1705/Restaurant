@@ -3,6 +3,7 @@ import ImageUploadSection from '../sections/ImageUploadSection';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Forms.css';
+import CheckIcon from '@mui/icons-material/Check';
 
 const UploadImagesForm = ({ onNext }) => {
     const [restaurantImages, setRestaurantImages] = useState([]);
@@ -61,37 +62,44 @@ const UploadImagesForm = ({ onNext }) => {
 
     if (isSubmitted) {
         return (
-            <Box className="success-container">
-                <Box className="success-icon">
+            <Box className="form-content success-page">
+                <Box className="success-container">
+                    <Box className="success-icon">
                     <Typography component="span" className="success-icon-text">✓</Typography>
                 </Box>
+                    <Typography variant="subtitle1" className="step-completed">
+                        STEP-1 Completed
+                    </Typography>
 
-                <Typography variant="h6" sx={{ mb: 2 }}>STEP -1 Completed</Typography>
+                    <Typography variant="h5" className="success-title">
+                        Restaurant listing details submitted
+                    </Typography>
 
-                <Typography variant="h5" fontWeight="bold" sx={{ mb: 3 }}>
-                    Restaurant listing details submitted
-                </Typography>
+                    <Typography variant="body1" className="success-message">
+                        Our team will verify the details and update once your page is live.
+                    </Typography>
 
-                <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
-                    Our team will verify the details and update once your page is live.
-                </Typography>
+                    <Divider sx={{ width: '100%', my: 4 }} />
 
-                <Divider sx={{ width: '100%', mb: 4 }} />
+                    <Box className="success-buttons">
+                        <Button
+                            variant="contained"
+                            onClick={handleClick}
+                            className="success-button-primary"
+                            fullWidth
+                        >
+                            STEP-2 Register for online ordering
+                        </Button>
 
-                <Button
-                    variant="contained"
-                    onClick={handleClick}
-                    className="success-button-primary"
-                >
-                    STEP -2 Register for online ordering
-                </Button>
-
-                <Button
-                    variant="contained"
-                    className="success-button-secondary"
-                >
-                    Done For now
-                </Button>
+                        <Button
+                            variant="contained"
+                            className="success-button-secondary"
+                            fullWidth
+                        >
+                            Done For now
+                        </Button>
+                    </Box>
+                </Box>
             </Box>
         );
     }

@@ -1,45 +1,67 @@
-
-import { Typography, Box, Button } from '@mui/material';
+import { Typography, Box, Button, Container, Grid } from '@mui/material';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import '../css/RequirementsSection.css';
 
 const RequirementsSection = () => {
     const requirements = [
-        'Pan Card',
+        'PAN card',
         'FSSAI license',
         'Bank account details',
         'GST number, if applicable',
         'Menu & profile food image'
     ];
 
+    const links = [
+        { text: "Don't have a FSSAI license?", link: "Apply here" },
+        { text: "What is profile food image?", link: "Refer here" }
+    ];
+
     return (
         <div className="requirements-section">
-            <Box className="requirements-container">
-                <Typography variant="h5" component="h3" className="section-title">
-                    Get Started - It only takes 10 minutes
-                </Typography>
+            <Container maxWidth="lg">
+                <Box className="requirements-container">
+                    <Typography variant="h4" component="h3" className="section-title">
+                        Get Started - It only takes 10 minutes
+                    </Typography>
 
-                <Typography variant="body1" className="section-subtitle">
-                    Please keep these documents and details ready for a smooth sign-up
-                </Typography>
+                    <Typography variant="body1" className="section-subtitle">
+                        Please keep these documents and details ready for a smooth sign-up
+                    </Typography>
 
-                <Box className="requirements-grid">
-                    <Box className="requirements-list">
-                        {requirements.map((req, index) => (
-                            <Box key={index} className="requirement-item">
-                                <CheckCircleOutlineIcon className="check-icon" />
-                                <Typography variant="body1">{req}</Typography>
+                    <Grid container spacing={4}>
+                        <Grid item xs={12} md={7}>
+                            <Box className="requirements-list">
+                                {requirements.map((req, index) => (
+                                    <Box key={index} className="requirement-item">
+                                        <CheckCircleOutlineIcon className="check-icon" />
+                                        <Typography variant="body1">{req}</Typography>
+
+                                        {index === 1 && (
+                                            <Typography variant="body2" className="requirement-link">
+                                                Don't have a FSSAI license? <span className="link-text">Apply here</span>
+                                            </Typography>
+                                        )}
+
+                                        {index === 4 && (
+                                            <Typography variant="body2" className="requirement-link">
+                                                What is profile food image? <span className="link-text">Refer here</span>
+                                            </Typography>
+                                        )}
+                                    </Box>
+                                ))}
                             </Box>
-                        ))}
-                    </Box>
+                        </Grid>
 
-                    <Box className="video-container">
-                        <Button variant="outlined" className="video-button">
-                            Onboarding Guide - Video
-                        </Button>
-                    </Box>
+                        <Grid item xs={12} md={5}>
+                            <Box className="video-container">
+                                <Button variant="outlined" className="video-button">
+                                    Onboarding Guide - Video
+                                </Button>
+                            </Box>
+                        </Grid>
+                    </Grid>
                 </Box>
-            </Box>
+            </Container>
         </div>
     );
 };

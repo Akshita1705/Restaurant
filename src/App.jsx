@@ -8,31 +8,33 @@ import HeroSection from './components/HeroSection.jsx';
 import RequirementsSection from './components/RequirementSection.jsx';
 
 import './App.css'
+import './css/Forms.css'; // Add this import
 import RegistrationInformation from './components/RegistrationInfo.jsx';
+
 function App() {
   return (
     <>
-     <Navbar></Navbar>
+      <Navbar></Navbar>
       <Routes>
-         
+
         <Route path="/" element={
           <>
-        
-          <HeroSection/>
-           <RequirementsSection/>
+
+            <HeroSection />
+            <RequirementsSection />
           </>
         } />
-         <Route path="/login" element={<AuthContainer />} />
+        <Route path="/login" element={<AuthContainer />} />
         <Route path="/restaurant-info" element={<RestaurantInfo />} />
-        
-        
-        <Route path="/onboarding" element={<Submitted/>}/>
-         <Route path="/online" element={<OnlineOrder/>}/>
+
+
+        <Route path="/onboarding" element={<Submitted />} />
+        <Route path="/online" element={<OnlineOrder />} />
 
       </Routes>
-    
-    
-  {/*<AuthContainer></AuthContainer>*/}
+
+
+      {/*<AuthContainer></AuthContainer>*/}
     </>
   )
 }

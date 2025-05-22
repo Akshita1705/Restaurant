@@ -1,4 +1,3 @@
-
 import {
   Box,
   Card,
@@ -21,14 +20,15 @@ const checklistItems = [
 ];
 
 const ChecklistCard = () => {
-    const navigate = useNavigate();
-    const handleClick = () => {
-  navigate('/restaurant-info', { state: { startStep: 'restaurantInfo' } });
-};
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/restaurant-info', { state: { startStep: 'restaurantInfo' } });
+  };
+  
   return (
     <Box className="getstarted-container">
       <Card className="getstarted-card">
-        <CardContent>
+        <CardContent sx={{ padding: '16px !important' }}>
           <Typography variant="h6" className="getstarted-title">
             Get Started with online Ordering
           </Typography>
@@ -36,14 +36,14 @@ const ChecklistCard = () => {
             Please keep these documents and details ready for a smooth sign-up
           </Typography>
 
-          <Grid container spacing={1}>
+          <Box sx={{ padding: '0 5px' }}>
             {checklistItems.map((item, index) => (
-              <Grid  key={index} className="getstarted-checkitem">
+              <Box key={index} className="getstarted-checkitem">
                 <CheckCircleIcon className="getstarted-icon" />
                 <Typography variant="body2">{item}</Typography>
-              </Grid>
+              </Box>
             ))}
-          </Grid>
+          </Box>
 
           <Divider className="getstarted-divider" />
 

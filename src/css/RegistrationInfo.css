@@ -1,49 +1,77 @@
-
-
 .section-title {
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-weight: 700;
+  margin-bottom: 28px;
+  font-size: 2rem;
+  color: #222;
+  letter-spacing: -0.5px;
 }
 
 .section-card {
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-bottom: 30px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e8e8e8;
+  padding: 24px;
+  margin-bottom: 24px;
 }
 
 .section-header {
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .phone-inputs,
 .account-inputs {
   display: flex;
-  gap: 12px;
-  margin: 10px 0;
+  gap: 16px;
+  margin: 18px 0;
 }
 
 .country-code {
   width: 70px;
+  background: #f8f8f8;
+  border-radius: 8px;
 }
 
-.css-74d805-MuiButtonBase-root-MuiButton-root.verify-button {
-  background-color: #999;
-  color: #fff;
-  text-transform: capitalize;
-  width:100px;
+.verify-button {
+  background-color: #ef4f5f !important;
+  color: #fff !important;
+  text-transform: none !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  box-shadow: none !important;
+  padding: 10px 24px !important;
+  margin-left: 8px;
 }
+
+.verify-button:hover {
+  background-color: #d8454f !important;
+}
+
 .highlight-text {
-  color: orange;
-  font-size: 13px;
-  margin-bottom: 10px;
-}
-.subtext {
-  font-size: 13px;
-  margin-bottom: 8px;
-  color: #555;
+  color: #ef4f5f;
+  font-size: 14px;
+  margin-bottom: 12px;
+  font-weight: 500;
 }
 
+.subtext {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #666;
+}
+
+.registration-info-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  padding: 36px 32px;
+  margin-bottom: 32px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}

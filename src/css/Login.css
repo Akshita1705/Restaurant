@@ -6,12 +6,11 @@
     padding: 20px;
 }
 
-.css-1gtchvp-MuiPaper-root.login-paper {
+.login-paper {
     padding: 24px;
     width: 100%;
     border-radius: 8px;
     max-width: 500px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .login-header {
@@ -21,56 +20,40 @@
     margin-bottom: 24px;
 }
 
-
-
-.phone-form {
-    display: flex;
-    flex-direction: column;
+.login-title {
+    font-weight: bold;
+    font-size: 32px;
 }
 
-.phone-input-wrapper {
+.phone-number {
+    display: flex;
+    gap: 1px;
+    margin-bottom: 12px;
+}
+
+.flag {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
     display: flex;
     align-items: center;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 4px;
+    justify-content: center;
+    min-width: 48px;
     background-color: #fff;
 }
-.phone-input-wrapper:focus-within {
-    border-color: #1976d2; /* MUI primary blue */
-    box-shadow: 0 0 0 1px #1976d2;
-}
 
-.country-selector {
-    display: flex;
-    align-items: center;
-    padding: 0 8px;
-    border-right: 1px solid #ccc;
-}
-
-.flag-img {
-    width: 24px;
-    margin-right: 4px;
-}
-
-.country-code {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.phone-input .MuiOutlinedInput-notchedOutline {
-    border: none;
+.prefix {
+    max-width: 80px;
+    background-color: #fff;
 }
 
 .submit-button {
-    background-color: #e23744 !important;
+    background-color: #ef4f5f !important;
     color: white !important;
     font-weight: bold !important;
     text-transform: none !important;
     padding: 12px 0 !important;
     border-radius: 6px !important;
-    margin: 16px 0;
+    margin: 16px 0px;
     font-size: 0.95rem;
 }
 
@@ -90,30 +73,22 @@
     font-size: 14px;
 }
 
-.email-button {
-    text-transform: none !important;
-    font-weight: bold !important;
-    border-radius: 6px !important;
-    color: #333 !important;
-    border-color: #ccc !important;
-    margin-bottom: 12px !important;
-}
-
 .form-footer {
     display: flex;
     justify-content: center;
     margin-top: 24px;
 }
 
-.css-7ctihp-MuiTypography-root .footer-text {
+.footer-text {
     color: #666;
+    margin-right: 6px;
     font-size: 14px;
-    margin-right: 4px;
 }
 
-.css-7ctihp-MuiTypography-root.footer-link {
-    color: #e23744 !important;
+.footer-link {
+    color: #ef4f5f;
     font-weight: bold;
-    font-size: 14px;
     cursor: pointer;
+    font-size: 14px;
+    padding-left: 3px;
 }

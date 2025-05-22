@@ -1,10 +1,8 @@
-/* Common form styles */
 .form-content {
     max-width: 800px;
     margin: 0 auto;
 }
 
-/* Form sections */
 .form-section {
     background-color: #fff;
     padding: 24px;
@@ -13,7 +11,6 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* Image upload sections */
 .image-upload-section {
     background-color: #e8e8e8;
     border-radius: 8px;
@@ -88,7 +85,6 @@
     cursor: pointer;
 }
 
-/* Next/Submit buttons */
 .form-button {
     padding: 12px 48px;
     font-size: 1.1rem;
@@ -115,52 +111,288 @@
     margin-bottom: 16px;
 }
 
-/* Success page styles */
+.success-page {
+    padding: 2rem;
+}
+
 .success-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 32px;
-    max-width: 800px;
+    padding: 3rem 2rem;
+    max-width: 600px;
     margin: 0 auto;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .success-icon {
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
     background-color: #22c55e;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);
+    color: white;
 }
 
-.success-icon-text {
-    color: white;
-    font-size: 60px;
+.step-completed {
+    font-weight: 600;
+    color: #22c55e;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+}
+
+.success-title {
+    font-weight: 700 !important;
+    font-size: 28px !important;
+    margin-bottom: 16px !important;
+    color: #222;
+}
+
+.success-message {
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.success-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .success-button-primary {
-    padding: 16px 32px;
-    margin-bottom: 24px;
-    background-color: #22c55e;
-    color: white;
-    border-radius: 4px;
+    padding: 12px 24px !important;
+    background-color: #ef4f5f !important;
+    color: white !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    font-size: 16px !important;
+    border-radius: 8px !important;
 }
 
 .success-button-primary:hover {
-    background-color: #16a34a;
+    background-color: #d8454f !important;
 }
 
 .success-button-secondary {
-    padding: 12px 32px;
-    background-color: #9e9e9e;
-    color: white;
-    border-radius: 4px;
+    padding: 12px 24px !important;
+    background-color: #f0f0f0 !important;
+    color: #555 !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    font-size: 16px !important;
+    border-radius: 8px !important;
+    border: 1px solid #ddd !important;
 }
 
 .success-button-secondary:hover {
-    background-color: #757575;
+    background-color: #e0e0e0 !important;
+}
+
+.registration-root {
+    display: flex;
+    min-height: 100vh;
+    background: #fafafa;
+    font-family: 'Inter', 'Roboto', Arial, sans-serif;
+}
+
+.registration-sidebar {
+    width: 340px;
+    background: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    border-right: 1px solid #f0f0f0;
+}
+
+.sidebar-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+    padding: 32px 24px;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.sidebar-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 28px;
+    letter-spacing: -0.5px;
+}
+
+.sidebar-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #222;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sidebar-step-circle {
+    width: 32px;
+    height: 32px;
+    background: #f8d7da;
+    color: #ef4f5f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: 2px solid #fff;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sidebar-step.active {
+    background: #fff0f1;
+    color: #ef4f5f;
+    font-weight: 700;
+}
+
+.sidebar-step.active .sidebar-step-circle {
+    background: #ef4f5f;
+    color: #fff;
+    border: 2px solid #ef4f5f;
+}
+
+.sidebar-divider {
+    border-bottom: 1.5px solid #f0f0f0;
+    margin: 18px 0;
+}
+
+.sidebar-step-label {
+    font-size: 1rem;
+}
+
+.registration-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 0;
+    min-width: 0;
+}
+
+.registration-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+    padding: 48px 40px;
+    min-width: 700px;
+    max-width: 900px;
+    width: 100%;
+}
+
+.registration-card h5,
+.registration-card .MuiTypography-h5 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 32px;
+    color: #222;
+    letter-spacing: -0.5px;
+}
+
+.registration-card .section-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+    color: #222;
+}
+
+.registration-card .section-header {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #ef4f5f;
+}
+
+.registration-card .subtext {
+    color: #666;
+    font-size: 0.98rem;
+    margin-bottom: 8px;
+}
+
+.registration-card .MuiTextField-root {
+    margin-bottom: 18px;
+}
+
+.registration-card .MuiButton-contained {
+    background-color: #ef4f5f !important;
+    color: #fff !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    box-shadow: none !important;
+    padding: 12px 28px !important;
+    font-size: 1rem !important;
+}
+
+.registration-card .MuiButton-contained:hover {
+    background-color: #d8454f !important;
+}
+
+.registration-card .MuiButton-outlined {
+    border-radius: 8px !important;
+    text-transform: none !important;
+    font-weight: 500 !important;
+}
+
+.section-card {
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 24px 20px;
+    margin-bottom: 28px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+@media (max-width: 900px) {
+    .registration-root {
+        flex-direction: column;
+    }
+
+    .registration-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #f0f0f0;
+        padding: 20px 0;
+        align-items: center;
+    }
+
+    .sidebar-card {
+        width: 90vw;
+        min-width: unset;
+        max-width: 100vw;
+    }
+
+    .registration-main {
+        padding: 30px 0;
+    }
+
+    .registration-card {
+        min-width: unset;
+        max-width: 98vw;
+        padding: 24px 10px;
+    }
 }
