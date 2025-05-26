@@ -4,7 +4,8 @@ import {
     Typography,
     TextField,
     Button,
-    InputAdornment
+    InputAdornment,
+    Collapse // Add this import
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import MyLocationIcon from '@mui/icons-material/MyLocation';
@@ -28,6 +29,7 @@ const LocationSection = () => {
     const MAPBOX_TOKEN = "pk.eyJ1IjoicHJvd2VzcyIsImEiOiJjbGsyYjlyNXcwZDBrM25vMWEyYWlhdGg5In0.l0V1ihozO8xQ6Uq9EoysUg";
 
     const [searchValue, setSearchValue] = useState('');
+    const [expanded, setExpanded] = useState(true); // Add this state
 
     const handleMapClick = useCallback(event => {
         setMarkerPosition({
@@ -96,157 +98,179 @@ const LocationSection = () => {
         }
     };
 
+    // Add this toggle function
+    const toggleExpanded = () => {
+        setExpanded(!expanded);
+    };
+
     return (
         <Box className="form-section">
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-                <Typography variant="h6" fontWeight="bold">Restaurant Details</Typography>
-                <KeyboardArrowDownIcon />
-            </Box>
-
-            <TextField
-                fullWidth
-                label="Restaurant Name"
-                variant="outlined"
-                size="small"
-            />
-
-            <TextField
-                fullWidth
-                label="Restaurant complete Address"
-                margin="normal"
-                variant="outlined"
-                size="small"
-                sx={{ mb: 1 }}
-            />
-
-            <Typography variant="body2" color="orange" sx={{ mb: 3 }}>
-                Please ensure the address is same as the FSSAI Document
-            </Typography>
-
-            <Typography variant="body1" fontWeight="medium" sx={{ mb: 1 }}>
-                Please place the location accurately at your outlet location on the Map
-            </Typography>
-
-            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                This will help customers and delivery partners locate your store
-            </Typography>
-
-            <Box sx={{ display: 'flex', mb: 2 }}>
-                <TextField
-                    label="Enter your restaurant Location"
-                    value={searchValue}
-                    onChange={(e) => setSearchValue(e.target.value)}
-                    onKeyPress={handleSearchKeyPress}
-                    InputProps={{
-                        startAdornment: (
-                            <InputAdornment position="start">
-                                <SearchIcon />
-                            </InputAdornment>
-                        ),
-                    }}
-                    variant="outlined"
-                    size="small"
-                    sx={{ flex: 1 }}
-                    fullWidth
-                />
-                <Button
-                    variant="contained"
-                    onClick={handleSearch}
-                    sx={{
-                        height: '40px',
-                        borderRadius: '0',
-                        bgcolor: '#8a8a8a',
-                        '&:hover': { bgcolor: '#6b6b6b' }
-                    }}
-                >
-                    Search
-                </Button>
-                <Button
-                    variant="outlined"
-                    onClick={handleDetectLocation}
-                    sx={{
-                        height: '40px',
-                        borderTopLeftRadius: 0,
-                        borderBottomLeftRadius: 0,
-                        width: '110px'
-                    }}
-                >
-                    Detect
-                    <MyLocationIcon sx={{ ml: 1 }} />
-                </Button>
-            </Box>
-
             <Box
                 sx={{
-                    height: 400,
-                    borderRadius: 1,
-                    mb: 3,
-                    position: 'relative',
-                    overflow: 'hidden'
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    mb: 2,
+                    cursor: 'pointer' // Add cursor pointer to indicate clickable
                 }}
+                onClick={toggleExpanded} // Add click handler
             >
-                <Map
-                    {...viewport}
-                    mapboxAccessToken={MAPBOX_TOKEN}
-                    style={{ width: '100%', height: '100%' }}
-                    mapStyle="mapbox://styles/mapbox/streets-v12"
-                    onMove={evt => setViewport(evt.viewState)}
-                    onClick={handleMapClick}
+                <Typography variant="h6" fontWeight="bold">Restaurant Details</Typography>
+                <KeyboardArrowDownIcon
+                    sx={{
+                        transform: expanded ? 'rotate(0deg)' : 'rotate(180deg)',
+                        transition: 'transform 0.3s'
+                    }}
+                />
+            </Box>
+
+            <Collapse in={expanded}>
+                {/* Wrap the content in Collapse component */}
+                <TextField
+                    fullWidth
+                    label="Restaurant Name"
+                    variant="outlined"
+                    size="small"
+                />
+
+                <TextField
+                    fullWidth
+                    label="Restaurant complete Address"
+                    margin="normal"
+                    variant="outlined"
+                    size="small"
+                    sx={{ mb: 1 }}
+                />
+
+                <Typography variant="body2" color="orange" sx={{ mb: 3 }}>
+                    Please ensure the address is same as the FSSAI Document
+                </Typography>
+
+                <Typography variant="body1" fontWeight="medium" sx={{ mb: 1 }}>
+                    Please place the location accurately at your outlet location on the Map
+                </Typography>
+
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                    This will help customers and delivery partners locate your store
+                </Typography>
+
+                <Box sx={{ display: 'flex', mb: 2 }}>
+                    <TextField
+                        label="Enter your restaurant Location"
+                        value={searchValue}
+                        onChange={(e) => setSearchValue(e.target.value)}
+                        onKeyPress={handleSearchKeyPress}
+                        InputProps={{
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                    <SearchIcon />
+                                </InputAdornment>
+                            ),
+                        }}
+                        variant="outlined"
+                        size="small"
+                        sx={{ flex: 1 }}
+                        fullWidth
+                    />
+                    <Button
+                        variant="contained"
+                        onClick={handleSearch}
+                        sx={{
+                            height: '40px',
+                            borderRadius: '0',
+                            bgcolor: '#8a8a8a',
+                            '&:hover': { bgcolor: '#6b6b6b' }
+                        }}
+                    >
+                        Search
+                    </Button>
+                    <Button
+                        variant="outlined"
+                        onClick={handleDetectLocation}
+                        sx={{
+                            height: '40px',
+                            borderTopLeftRadius: 0,
+                            borderBottomLeftRadius: 0,
+                            width: '110px'
+                        }}
+                    >
+                        Detect
+                        <MyLocationIcon sx={{ ml: 1 }} />
+                    </Button>
+                </Box>
+
+                <Box
+                    sx={{
+                        height: 400,
+                        borderRadius: 1,
+                        mb: 3,
+                        position: 'relative',
+                        overflow: 'hidden'
+                    }}
                 >
-                    <Marker
-                        longitude={markerPosition.longitude}
-                        latitude={markerPosition.latitude}
-                        anchor="bottom"
-                        draggable
-                        onDragEnd={(event) => {
+                    <Map
+                        {...viewport}
+                        mapboxAccessToken={MAPBOX_TOKEN}
+                        style={{ width: '100%', height: '100%' }}
+                        mapStyle="mapbox://styles/mapbox/streets-v12"
+                        onMove={evt => setViewport(evt.viewState)}
+                        onClick={handleMapClick}
+                    >
+                        <Marker
+                            longitude={markerPosition.longitude}
+                            latitude={markerPosition.latitude}
+                            anchor="bottom"
+                            draggable
+                            onDragEnd={(event) => {
+                                setMarkerPosition({
+                                    longitude: event.lngLat.lng,
+                                    latitude: event.lngLat.lat
+                                });
+                            }}
+                        >
+                            <Box sx={{ color: 'red', fontSize: 40 }}>📍</Box>
+                        </Marker>
+                    </Map>
+
+                    <Box sx={{ position: 'absolute', bottom: 10, right: 10, zIndex: 1 }}>
+                        <Typography variant="body2" sx={{ bgcolor: 'white', p: 1, borderRadius: 1, boxShadow: 1 }}>
+                            Lat: {markerPosition.latitude.toFixed(6)}, Lng: {markerPosition.longitude.toFixed(6)}
+                        </Typography>
+                    </Box>
+                </Box>
+
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 3 }}>
+                    <Button
+                        variant="contained"
+                        onClick={() => {
+                            // Reset to Visakhapatnam
+                            setViewport({
+                                longitude: 83.2184815,
+                                latitude: 17.6868159,
+                                zoom: 13
+                            });
                             setMarkerPosition({
-                                longitude: event.lngLat.lng,
-                                latitude: event.lngLat.lat
+                                longitude: 83.2184815,
+                                latitude: 17.6868159
                             });
                         }}
                     >
-                        <Box sx={{ color: 'red', fontSize: 40 }}>📍</Box>
-                    </Marker>
-                </Map>
+                        Reset to Visakhapatnam
+                    </Button>
 
-                <Box sx={{ position: 'absolute', bottom: 10, right: 10, zIndex: 1 }}>
-                    <Typography variant="body2" sx={{ bgcolor: 'white', p: 1, borderRadius: 1, boxShadow: 1 }}>
-                        Lat: {markerPosition.latitude.toFixed(6)}, Lng: {markerPosition.longitude.toFixed(6)}
-                    </Typography>
+                    <Button
+                        variant="outlined"
+                        onClick={() => {
+                            console.log("Selected location:", markerPosition);
+                            // CAN BE ADDED: save this data to your form state
+                            alert(`Location selected: ${markerPosition.latitude.toFixed(6)}, ${markerPosition.longitude.toFixed(6)}`);
+
+                        }}
+                    >
+                        Confirm Location
+                    </Button>
                 </Box>
-            </Box>
-
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 3 }}>
-                <Button
-                    variant="contained"
-                    onClick={() => {
-                        // Reset to Visakhapatnam
-                        setViewport({
-                            longitude: 83.2184815,
-                            latitude: 17.6868159,
-                            zoom: 13
-                        });
-                        setMarkerPosition({
-                            longitude: 83.2184815,
-                            latitude: 17.6868159
-                        });
-                    }}
-                >
-                    Reset to Visakhapatnam
-                </Button>
-
-                <Button
-                    variant="outlined"
-                    onClick={() => {
-                        console.log("Selected location:", markerPosition);
-                        // CAN BE ADDED: save this data to your form state
-                        alert(`Location selected: ${markerPosition.latitude.toFixed(6)}, ${markerPosition.longitude.toFixed(6)}`);
-
-                    }}
-                >
-                    Confirm Location
-                </Button>
-            </Box>
+            </Collapse>
         </Box>
     );
 };

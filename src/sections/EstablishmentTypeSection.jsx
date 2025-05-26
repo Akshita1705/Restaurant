@@ -5,8 +5,10 @@ import {
     Button,
     Checkbox,
     FormControlLabel,
-    FormGroup
+    FormGroup,
+    Collapse
 } from '@mui/material';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const EstablishmentTypeSection = () => {
     const [establishmentType, setEstablishmentType] = useState('deliveryOnly');
@@ -34,6 +36,7 @@ const EstablishmentTypeSection = () => {
     };
 
     const [extendedOutletTypes, setExtendedOutletTypes] = useState(additionalOutletTypes);
+    const [expanded, setExpanded] = useState(true);
 
     const handleEstablishmentTypeChange = (event) => {
         setEstablishmentType(event.target.value);
@@ -57,6 +60,10 @@ const EstablishmentTypeSection = () => {
         setShowMoreOutletTypes(!showMoreOutletTypes);
     };
 
+    const toggleExpanded = () => {
+        setExpanded(!expanded);
+    };
+
     return (
         <Box className="form-section">
             {/* Establishment Type Section */}
@@ -67,52 +74,64 @@ const EstablishmentTypeSection = () => {
                 mb: 2,
                 mt: 2,
                 pb: 2,
-                borderBottom: '1px solid #e0e0e0'
-            }}>
+                borderBottom: '1px solid #e0e0e0',
+                cursor: 'pointer'
+            }}
+                onClick={toggleExpanded}
+            >
                 <Typography variant="h6" fontWeight="bold" sx={{ mr: 1 }}>
                     Establishment Type - Delivery Only
                 </Typography>
-            </Box>
-
-            <Box sx={{ mt: 4, mb: 2 }}>
-                <Typography variant="body1" fontWeight="medium" sx={{ mb: 2 }}>
-                    Select the options which best suited to your Outlet
-                </Typography>
-
-                <FormGroup sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                    {/* Outlet type checkboxes */}
-                    {Object.entries(outletTypes).map(([key, value]) => (
-                        <Box key={key} sx={{ width: '33%', mb: 1 }}>
-                            <FormControlLabel
-                                control={<Checkbox checked={value} onChange={handleOutletTypeChange} name={key} />}
-                                label={key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1')}
-                            />
-                        </Box>
-                    ))}
-
-                    {showMoreOutletTypes && Object.entries(extendedOutletTypes).map(([key, value]) => (
-                        <Box key={key} sx={{ width: '33%', mb: 1 }}>
-                            <FormControlLabel
-                                control={<Checkbox checked={value} onChange={handleOutletTypeChange} name={key} />}
-                                label={key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1')}
-                            />
-                        </Box>
-                    ))}
-                </FormGroup>
-
-                <Button
-                    onClick={toggleMoreOutletTypes}
+                <KeyboardArrowDownIcon
                     sx={{
-                        color: 'primary.main',
-                        mt: 1,
-                        fontWeight: 'medium',
-                        '&:hover': { backgroundColor: 'transparent' },
-                        padding: 0
+                        marginLeft: 'auto',
+                        transform: expanded ? 'rotate(0deg)' : 'rotate(180deg)',
+                        transition: 'transform 0.3s'
                     }}
-                >
-                    {showMoreOutletTypes ? '- Show Less' : '+ Load More'}
-                </Button>
+                />
             </Box>
+
+            <Collapse in={expanded}>
+                <Box sx={{ mt: 4, mb: 2 }}>
+                    <Typography variant="body1" fontWeight="medium" sx={{ mb: 2 }}>
+                        Select the options which best suited to your Outlet
+                    </Typography>
+
+                    <FormGroup sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                        {/* Outlet type checkboxes */}
+                        {Object.entries(outletTypes).map(([key, value]) => (
+                            <Box key={key} sx={{ width: '33%', mb: 1 }}>
+                                <FormControlLabel
+                                    control={<Checkbox checked={value} onChange={handleOutletTypeChange} name={key} />}
+                                    label={key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1')}
+                                />
+                            </Box>
+                        ))}
+
+                        {showMoreOutletTypes && Object.entries(extendedOutletTypes).map(([key, value]) => (
+                            <Box key={key} sx={{ width: '33%', mb: 1 }}>
+                                <FormControlLabel
+                                    control={<Checkbox checked={value} onChange={handleOutletTypeChange} name={key} />}
+                                    label={key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1')}
+                                />
+                            </Box>
+                        ))}
+                    </FormGroup>
+
+                    <Button
+                        onClick={toggleMoreOutletTypes}
+                        sx={{
+                            color: 'primary.main',
+                            mt: 1,
+                            fontWeight: 'medium',
+                            '&:hover': { backgroundColor: 'transparent' },
+                            padding: 0
+                        }}
+                    >
+                        {showMoreOutletTypes ? '- Show Less' : '+ Load More'}
+                    </Button>
+                </Box>
+            </Collapse>
         </Box>
     );
 };

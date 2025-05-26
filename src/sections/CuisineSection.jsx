@@ -5,8 +5,10 @@ import {
     Button,
     Checkbox,
     FormControlLabel,
-    FormGroup
+    FormGroup,
+    Collapse
 } from '@mui/material';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const CuisineSection = () => {
     const [cuisineTypes, setCuisineTypes] = useState({
@@ -33,6 +35,7 @@ const CuisineSection = () => {
     });
 
     const [showMoreCuisines, setShowMoreCuisines] = useState(false);
+    const [expanded, setExpanded] = useState(true);
 
     const handleCuisineTypeChange = (event) => {
         setCuisineTypes({
@@ -45,6 +48,10 @@ const CuisineSection = () => {
         setShowMoreCuisines(!showMoreCuisines);
     };
 
+    const toggleExpanded = () => {
+        setExpanded(!expanded);
+    };
+
     return (
         <Box className="form-section" sx={{ mt: 3 }}>
             {/* Cuisine Types Section */}
@@ -55,51 +62,63 @@ const CuisineSection = () => {
                 mb: 2,
                 mt: 2,
                 pb: 2,
-                borderBottom: '1px solid #e0e0e0'
-            }}>
+                borderBottom: '1px solid #e0e0e0',
+                cursor: 'pointer'
+            }}
+                onClick={toggleExpanded}
+            >
                 <Typography variant="h6" fontWeight="bold" sx={{ mr: 1 }}>
                     Type of Cuisines
                 </Typography>
+                <KeyboardArrowDownIcon
+                    sx={{
+                        marginLeft: 'auto',
+                        transform: expanded ? 'rotate(0deg)' : 'rotate(180deg)',
+                        transition: 'transform 0.3s'
+                    }}
+                />
             </Box>
 
-            <Typography variant="body1" sx={{ mb: 2 }}>
-                Select the options which best Describe the food you serve
-            </Typography>
+            <Collapse in={expanded}>
+                <Typography variant="body1" sx={{ mb: 2 }}>
+                    Select the options which best Describe the food you serve
+                </Typography>
 
-            <FormGroup sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                {/* Display first 8 cuisines */}
-                {Object.entries(cuisineTypes).slice(0, 8).map(([key, value]) => (
-                    <Box key={key} sx={{ width: '33%', mb: 1 }}>
-                        <FormControlLabel
-                            control={<Checkbox checked={value} onChange={handleCuisineTypeChange} name={key} />}
-                            label={key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1')}
-                        />
-                    </Box>
-                ))}
+                <FormGroup sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                    {/* Display first 8 cuisines */}
+                    {Object.entries(cuisineTypes).slice(0, 8).map(([key, value]) => (
+                        <Box key={key} sx={{ width: '33%', mb: 1 }}>
+                            <FormControlLabel
+                                control={<Checkbox checked={value} onChange={handleCuisineTypeChange} name={key} />}
+                                label={key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1')}
+                            />
+                        </Box>
+                    ))}
 
-                {/* Show more cuisines if expanded */}
-                {showMoreCuisines && Object.entries(cuisineTypes).slice(8).map(([key, value]) => (
-                    <Box key={key} sx={{ width: '33%', mb: 1 }}>
-                        <FormControlLabel
-                            control={<Checkbox checked={value} onChange={handleCuisineTypeChange} name={key} />}
-                            label={key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1')}
-                        />
-                    </Box>
-                ))}
-            </FormGroup>
+                    {/* Show more cuisines if expanded */}
+                    {showMoreCuisines && Object.entries(cuisineTypes).slice(8).map(([key, value]) => (
+                        <Box key={key} sx={{ width: '33%', mb: 1 }}>
+                            <FormControlLabel
+                                control={<Checkbox checked={value} onChange={handleCuisineTypeChange} name={key} />}
+                                label={key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1')}
+                            />
+                        </Box>
+                    ))}
+                </FormGroup>
 
-            <Button
-                onClick={toggleMoreCuisines}
-                sx={{
-                    color: 'primary.main',
-                    mt: 1,
-                    fontWeight: 'medium',
-                    '&:hover': { backgroundColor: 'transparent' },
-                    padding: 0
-                }}
-            >
-                {showMoreCuisines ? '- Show Less' : '+ Load More'}
-            </Button>
+                <Button
+                    onClick={toggleMoreCuisines}
+                    sx={{
+                        color: 'primary.main',
+                        mt: 1,
+                        fontWeight: 'medium',
+                        '&:hover': { backgroundColor: 'transparent' },
+                        padding: 0
+                    }}
+                >
+                    {showMoreCuisines ? '- Show Less' : '+ Load More'}
+                </Button>
+            </Collapse>
         </Box>
     );
 };
