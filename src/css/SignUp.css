@@ -4,7 +4,7 @@
     align-items: center;
     min-height: 80vh;
     padding: 20px;
-   
+
 }
 
 .signup-paper {
@@ -19,8 +19,8 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
-   
-    
+
+
 }
 
 .css-16xl4zq-MuiTypography-root.signup-title {
@@ -28,30 +28,33 @@
     font-size: 37px;
 }
 
-.phone-number{
-    display:flex;
-    gap:1px;
-    margin-bottom:2px;
- 
+.phone-number {
+    display: flex;
+    gap: 1px;
+    margin-bottom: 2px;
+
 }
-.flag{
-    border:1px solid #ccc;
-    border-radius:6px ;
-    padding:8px 12px;
-    display:flex;
+
+.flag {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 8px 12px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    min-width:48px ;
-    background-color:#fff ;
-  
-}
-.prefix{
-    max-width:80px ;
+    min-width: 48px;
     background-color: #fff;
-    
+
 }
+
+.prefix {
+    max-width: 80px;
+    background-color: #fff;
+
+}
+
 .css-1k9hkw1-MuiButtonBase-root-MuiButton-root.submit-button {
-    background-color: #e05258 !important;
+    background-color: #1976d2 !important;
     color: white !important;
     font-weight: bold !important;
     text-transform: none !important;
@@ -95,7 +98,7 @@
     cursor: pointer;
     font-size: 14px;
     padding-left: 3px;
-   
+
 }
 
 .MuiTextField-root .MuiInputLabel-outlined {

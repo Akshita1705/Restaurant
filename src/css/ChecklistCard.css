@@ -48,7 +48,7 @@
 }
 
 .getstarted-button {
-  background-color: #ef4f5f !important;
+  background-color: #1976d2 !important;
   color: #fff !important;
   font-weight: bold !important;
   text-transform: none !important;
@@ -58,7 +58,5 @@
 }
 
 .getstarted-button:hover {
-  background-color: #d8454f !important;
+  background-color: #1565c0 !important;
 }
-
-

@@ -19,7 +19,7 @@
 
 .step-number {
     font-weight: 700;
-    color: #ef4f5f;
+    color: #1976d2;
     margin-bottom: 18px;
     font-size: 1.1rem;
 }
@@ -41,8 +41,8 @@
 .step-card .step-circle {
     width: 32px;
     height: 32px;
-    background: #f8d7da;
-    color: #ef4f5f;
+    background: #e3f2fd;
+    color: #1976d2;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -52,12 +52,12 @@
 }
 
 .step-card.active {
-    border: 1.5px solid #ef4f5f;
-    background: #fff0f1;
+    border: 1.5px solid #1976d2;
+    background: #e6f0ff;
 }
 
 .step-card.active .step-circle {
-    background: #ef4f5f;
+    background: #1976d2;
     color: #fff;
 }
 

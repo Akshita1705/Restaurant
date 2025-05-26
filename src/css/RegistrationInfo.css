@@ -38,7 +38,7 @@
 }
 
 .verify-button {
-  background-color: #ef4f5f !important;
+  background-color: #1976d2 !important;
   color: #fff !important;
   text-transform: none !important;
   border-radius: 8px !important;
@@ -49,11 +49,11 @@
 }
 
 .verify-button:hover {
-  background-color: #d8454f !important;
+  background-color: #1565c0 !important;
 }
 
 .highlight-text {
-  color: #ef4f5f;
+  color: #1976d2;
   font-size: 14px;
   margin-bottom: 12px;
   font-weight: 500;

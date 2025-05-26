@@ -88,14 +88,14 @@
 .form-button {
     padding: 12px 48px;
     font-size: 1.1rem;
-    background-color: #ef4f5f !important;
+    background-color: #1976d2 !important;
     color: white !important;
     text-transform: none !important;
     border-radius: 4px;
 }
 
 .form-button:hover {
-    background-color: #d8454f !important;
+    background-color: #1565c0 !important;
 }
 
 .form-button-container {
@@ -170,7 +170,7 @@
 
 .success-button-primary {
     padding: 12px 24px !important;
-    background-color: #ef4f5f !important;
+    background-color: #1976d2 !important;
     color: white !important;
     font-weight: 600 !important;
     text-transform: none !important;
@@ -179,7 +179,7 @@
 }
 
 .success-button-primary:hover {
-    background-color: #d8454f !important;
+    background-color: #1565c0 !important;
 }
 
 .success-button-secondary {
@@ -254,8 +254,10 @@
 .sidebar-step-circle {
     width: 32px;
     height: 32px;
-    background: #f8d7da;
-    color: #ef4f5f;
+    background: #e3f2fd;
+    /* Changed from #f8d7da */
+    color: #1976d2;
+    /* Changed from #ef4f5f */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -267,15 +269,19 @@
 }
 
 .sidebar-step.active {
-    background: #fff0f1;
-    color: #ef4f5f;
+    background: #e6f0ff;
+    /* Changed from #fff0f1 */
+    color: #1976d2;
+    /* Changed from #ef4f5f */
     font-weight: 700;
 }
 
 .sidebar-step.active .sidebar-step-circle {
-    background: #ef4f5f;
+    background: #1976d2;
+    /* Changed from #ef4f5f */
     color: #fff;
-    border: 2px solid #ef4f5f;
+    border: 2px solid #1976d2;
+    /* Changed from #ef4f5f */
 }
 
 .sidebar-divider {
@@ -340,7 +346,8 @@
 }
 
 .registration-card .MuiButton-contained {
-    background-color: #ef4f5f !important;
+    background-color: #1976d2 !important;
+    /* Changed from #ef4f5f */
     color: #fff !important;
     border-radius: 8px !important;
     font-weight: 600 !important;
@@ -351,7 +358,8 @@
 }
 
 .registration-card .MuiButton-contained:hover {
-    background-color: #d8454f !important;
+    background-color: #1565c0 !important;
+    /* Changed from #d8454f */
 }
 
 .registration-card .MuiButton-outlined {

@@ -47,7 +47,7 @@
 }
 
 .submit-button {
-    background-color: #ef4f5f !important;
+    background-color: #1976d2 !important;
     color: white !important;
     font-weight: bold !important;
     text-transform: none !important;
@@ -86,7 +86,7 @@
 }
 
 .footer-link {
-    color: #ef4f5f;
+    color: #1976d2;
     font-weight: bold;
     cursor: pointer;
     font-size: 14px;

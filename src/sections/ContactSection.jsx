@@ -38,8 +38,8 @@ const ContactSection = () => {
                     sx={{
                         height: '40px',
                         flexShrink: 0,
-                        bgcolor: '#ef4f5f',
-                        '&:hover': { bgcolor: '#d8454f' }
+                        bgcolor: '#1976d2', // Changed from #ef4f5f
+                        '&:hover': { bgcolor: '#1565c0' } // Changed from #d8454f
                     }}
                 >
                     verify
@@ -77,8 +77,8 @@ const ContactSection = () => {
                     sx={{
                         height: '40px',
                         flexShrink: 0,
-                        bgcolor: '#ef4f5f',
-                        '&:hover': { bgcolor: '#d8454f' }
+                        bgcolor: '#1976d2', // Changed from #ef4f5f
+                        '&:hover': { bgcolor: '#1565c0' } // Changed from #d8454f
                     }}
                 >
                     verify
