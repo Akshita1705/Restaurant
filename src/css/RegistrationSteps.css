@@ -61,6 +61,21 @@
     color: #fff;
 }
 
+.sidebar-step {
+    position: relative;
+}
+
+.sidebar-step.active::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: #1976d2;
+    border-radius: 2px;
+}
+
 .step-content {
     flex: 1;
     padding: 48px 48px 48px 48px;
